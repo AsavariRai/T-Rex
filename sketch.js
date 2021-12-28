@@ -62,7 +62,7 @@ function draw(){
     score= score+ Math.round(getFrameRate()/60)
     ground.velocityX= -5
     //jump when space key is pressed
-  if(keyDown("space") && trex.y>=120){
+  if(keyDown("space")||touches.length>0 && trex.y>=120){
     trex.velocityY = -10;
     js.play()
   }
@@ -71,6 +71,7 @@ function draw(){
   }
   trex.velocityY = trex.velocityY + 0.5;
    //calling a user defined function
+      
    spawnCloud()
    spawnObstacles() 
    if (score %100==0 && score>0){
